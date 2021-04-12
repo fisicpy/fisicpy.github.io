@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Фракталы</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="icon" href="../img/fisicpy_icon.png" type="image/x-icon">
+</head>
+<body>
+	<header class="up_block">
+		<img src="../img/fisicpy_logo.jpg" width="50" class="up_title_foto">
+		<p class="up_title">Fisicpy</p>
+		<a href="../index.html" class="up_link">Main page</a>
+		<a href="../about.html" class="up_link">About</a>
+		<a href="../projects.html" class="up_link">Projects</a>
+		<a href="../achievs.html" class="up_link">Achievements</a>
+		<a href="../articles.html" class="up_link_now">Articles</a>
+		<a href="https://instagram.com/fisicpy/" class="up_block_link_network" target="_blank">Instagram</a>
+		<a href="https://vk.com/fisicpy" class="up_block_link_network" target="_blank">VK</a>
+		<a href="https://github.com/fisicpy" class="up_block_link_network" target="_blank">GitHub</a>
+		<a href="https://twitter.com/fisicpy" class="up_block_link_network" target="_blank">Twitter</a>
+	</header>
+	<div class="block">
+		<h1>Другие языки</h1>
+		<a class="other_language_link" href="article_fractals1_en.html">English</a>
+		<br>
+		<a class="other_language_link" href="article_fractals1_ru.html">Русский</a>
+	</div>
+	<div class="block">
+		<h1 class="article_title">Фракталы</h1>
+		<h1 class="article_date">08/04/2021</h1>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Сегодня мы поговорим о фракталах. Для начала надо разобраться с определением фракталов. <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Fractal">Фрактал</a> - множество, обладающее свойством самоподобия.</p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В обычной жизни мы очень часто встречаемся с фракталами. В реальном мире это могут быть снежинки, папоротники, раковины улиток, молнии и многое другое.</p>
+		<img src="img/fractals1_img1.jpg" width="300" height="200">
+		<img src="img/fractals1_img2.jpg" width="300" height="200">
+		<img src="img/fractals1_img3.jpg" width="300" height="200">
+		<img src="img/fractals1_img4.jpg" width="300" height="200">
+		<img src="img/fractals1_img5.jpg" width="300" height="200">
+		<img src="img/fractals1_img6.jpg" width="300" height="200">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Примером простого фрактала может служить <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Sierpiński_triangle">треугольник Серпинского</a>. Первое математическое описание этого фрактала опубликовал польский математик <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Wacław_Sierpiński">Вацлав Серпинский</a> в 1915 году. Для построения треугольника Серпинского надо построить большой треугольник, после чего построить еще один треугольник, получающийся при соединении середин сторон большого треугольника. После чего у вас получится четыре одинаковых треугольника меньшего размера. Далее вам нужно повторить алгоритм с полученными треугольниками несколько раз, игнорируя треугольник получающийся при соединении середин сторон большого треугольника. У вас должно получиться примерно так:</p>
+		<img src="img/fractals1_img7.jpg" width="200">
+		<img src="img/fractals1_img8.jpg" width="200">
+		<img src="img/fractals1_img9.jpg" width="200">
+		<br>
+		<img src="img/fractals1_img10.jpg" width="200">
+		<img src="img/fractals1_img11.jpg" width="200">
+		<img src="img/fractals1_img12.jpg" width="200">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Эта анимация демонстрирует свойство самободобия треугольника Серпинского:</p>
+		<img src="img/fractals1_img13.gif" width="500">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Можно также рисовать треугольник Серпинского методом итераций или игрой в хаос. <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Chaos_theory">Теория хаоса</a> - математический аппарат, описывающий поведение некоторых нелинейных динамических систем, подверженных при определённых условиях явлению, известному как хаос.</p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Так как мы используем метод рисования игрой в хаос, нам нужно будет повторять одно и тоже действие сотни и тысячи раз. Для автоматизации мы будем использовать скрипт на python с модулем pygame. Я не буду вдаваться в подробности программирования на python и использование модуля pygame потому, что эта статья не про программирование на python, а про фракталы.</p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Продолжим говорить про треугольник Серпинского. Для того чтобы нарисовать треугольник Серпинского сначала вам надо поставить три случайные точки на плоскости:</p>
+		<img src="img/fractals1_img14.png" width="400">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Далее нам нужно поставить случайную точку(помечена красной стрелочкой), она может находится в любом месте на данной плоскости, хоть внутри треугольника, образованного тремя начальными точками, хоть снаружи этого треугольника:</p>
+		<img src="img/fractals1_img15.png" width="400">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Следующий шаг заключается в том, что мы должны случайно взять одну из трех основных точек и точку, которую мы поставили на предыдущем шаге, и найти середину отрезка, создаваемого этими двумя точками, и поставить туда новую точку(помечена красной стрелочкой):</p>
+		<img src="img/fractals1_img16.png" width="400">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Для нахождения координат середины отрезка по координатам двух точек, описывающих этот отрезок, я использовал такую функцию:</p>
+		<div class="code_block">
+			<p>
+				<span class="code_blue_text">def</span> <span class="code_green_text">get_coords_center_line</span>(<span class="code_orange_text">x1</span>, <span class="code_orange_text">y1</span>, <span class="code_orange_text">x2</span>, <span class="code_orange_text">y2</span>):
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x3 = <span class="code_blue_text">int</span>((x1 <span class="code_red_text">+</span> x2) <span class="code_red_text">/</span> <span class="code_purple_text">2</span>)<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y3 = <span class="code_blue_text">int</span>((y1 <span class="code_red_text">+</span> y2) <span class="code_red_text">/</span> <span class="code_purple_text">2</span>)<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code_red_text">return</span> x3, y3
+			</p>
+		</div>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Следующим шагом, мы должны еще раз выбрать случайную точку из трех основных и снова найти середину отрезка между выбранной точкой и последней поставленной точкой. Этот шаг нужно будет повторять очень много раз до того, как у нас вырисуется треугольник Серпинского:</p>
+		<img src="img/fractals1_img17.gif" width="400">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Очень интересно, что несмотря на то, что у нас построение треугольника Серпинского полностью построенно на хаосе, который проявляется в полностью хаотичном, случайном выборе одной из основных точек, то у нас все равно получится данный фрактал.</p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Возможно у вас возник вопрос "А что если поставить начальную точку в предполагаемый пустой треугольник, образуемый серединами отрезков большого треугольника, то что будет тогда?". Как было сказано ранее мы можем ставить первую точку в любое место на плоскости, то есть если мы поставим начальную точку в предполагаемый пустой треугольник, образуемй серединами отрезков большого треугольника, то у нас получится только пара точек, которые находятся в пустотах. Но треугольник Серпинского все равно получится. Ведь мы должны смотреть не на поведение отдельных точек, а на групповое поведение большого количества точек:</p>
+		<img src="img/fractals1_img18.gif" width="400">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Как мы можем видеть, у нас есть три точки выбивающиеся из общего поведения, но если смотреть на общее поведение точек, то оно полностью предсказуемо.</p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Фракталы - очень красивые математические фигуры, встречаемые в реальной жизни, и всю эту красоту можно получить из чистого хаоса.</p>
+	</div>
+	<div class="block">
+		<h1>Использованные ссылки:</h1>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Код из этой статьи, GitHub: <a class="link" target="_blank" href="https://github.com/fisicpy/chaos-theory">https://github.com/fisicpy/chaos-theory</a></p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Теория хаоса, википедия: <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Chaos_theory">https://en.wikipedia.org/wiki/Chaos_theory</a></p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Треугольник Серпинского, википедия: <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Sierpiński_triangle">https://en.wikipedia.org/wiki/Sierpiński_triangle</a></p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Вацлав Серпинский, википедия: <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Wacław_Sierpiński">https://en.wikipedia.org/wiki/Wacław_Sierpiński</a></p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Фрактал, википедия: <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Fractal">https://en.wikipedia.org/wiki/Fractal</a></p>
+	</div>
+</body>
+</html>

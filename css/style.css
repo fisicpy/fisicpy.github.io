@@ -70,12 +70,23 @@ body {
 	text-decoration-line: none;
 }
 
+.other_language_link {
+	font-size: 24px;
+	text-align: justify;
+	color: #4eadff;
+	text-decoration-line: none;
+}
+
+.other_language_link:hover {
+	color: #4effe7;
+}
+
 .link:hover {
 	color: #4effe7;
 }
 
 .code_block {
-	color: #ffb04e;
+	color: #fff;
 	background-color: #222;
 	width: auto;
 	height: auto;
@@ -85,6 +96,26 @@ body {
 	text-align: left;
 	width: 500px;
 	border-radius: 20px;
+}
+
+.code_red_text {
+	color: #E32639;
+}
+
+.code_purple_text {
+	color: #AC80FF;
+}
+
+.code_blue_text {
+	color: #67D8EF;
+}
+
+.code_green_text {
+	color: #A6E228;
+}
+
+.code_orange_text {
+	color: #FD9622;
 }
 
 .down_block {
@@ -119,5 +150,15 @@ li {
 	font-size: 24px;
 	text-align: left;
 	width: 500px;
+}
+
+.article_date {
+	color: #757575;
+	margin-top: 0px;
+	font-size: 25px;
+}
+
+.article_title {
+	margin-bottom: 10px;
 }
 

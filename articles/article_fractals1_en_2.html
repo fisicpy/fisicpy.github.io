@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fractals</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="icon" href="../img/fisicpy_icon.png" type="image/x-icon">
+</head>
+<body>
+	<header class="up_block">
+		<img src="../img/fisicpy_logo.jpg" width="50" class="up_title_foto">
+		<p class="up_title">Fisicpy</p>
+		<a href="../index.html" class="up_link">Main page</a>
+		<a href="../about.html" class="up_link">About</a>
+		<a href="../projects.html" class="up_link">Projects</a>
+		<a href="../achievs.html" class="up_link">Achievements</a>
+		<a href="../articles.html" class="up_link_now">Articles</a>
+		<a href="https://instagram.com/fisicpy/" class="up_block_link_network" target="_blank">Instagram</a>
+		<a href="https://vk.com/fisicpy" class="up_block_link_network" target="_blank">VK</a>
+		<a href="https://github.com/fisicpy" class="up_block_link_network" target="_blank">GitHub</a>
+		<a href="https://twitter.com/fisicpy" class="up_block_link_network" target="_blank">Twitter</a>
+	</header>
+	<div class="block">
+		<h1>Other languages</h1>
+		<a class="other_language_link" href="article_fractals1_en.html">English</a>
+		<br>
+		<a class="other_language_link" href="article_fractals1_ru.html">Русский</a>
+	</div>
+	<div class="block">
+		<h1 class="article_title">Fractals</h1>
+		<h1 class="article_date">08/04/2021</h1>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Today we will talk about fractals. First you need to understand the definition of fractals. <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Fractal">A fractal</a> - a set that has the property of self-similarity.</p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In everyday life, we often encounter fractals. In everyday life, it can be snowflakes, ferns, snail shells, lightning, and more.</p>
+		<img src="img/fractals1_img1.jpg" width="300">
+		<img src="img/fractals1_img2.jpg" width="280">
+		<img src="img/fractals1_img3.jpg" width="280">
+		<img src="img/fractals1_img4.jpg" width="280">
+		<img src="img/fractals1_img5.jpg" width="220">
+		<img src="img/fractals1_img6.jpg" width="300">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An example of a simple fractal is the <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Sierpiński_triangle">Sierpinski triangle</a>. The first mathematical description of this fractal was published by the Polish mathematician <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Wacław_Sierpiński">Waclaw Sierpinski</a> in 1915. To build a Sierpinski triangle, you need to build a large triangle, and then build another triangle, which is obtained by connecting the midpoints of the sides of the large triangle. After that, you will get four identical triangles of a smaller size. Next, you need to repeat the algorithm with the resulting triangles several times, ignoring the triangle obtained when connecting the midpoints of the sides of a large triangle. You should get something like this:</p>
+		<img src="img/fractals1_img7.jpg" width="200">
+		<img src="img/fractals1_img8.jpg" width="200">
+		<img src="img/fractals1_img9.jpg" width="200">
+		<br>
+		<img src="img/fractals1_img10.jpg" width="200">
+		<img src="img/fractals1_img11.jpg" width="200">
+		<img src="img/fractals1_img12.jpg" width="200">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This animation show Sierpinski triangle's property of self-similarity:</p>
+		<img src="img/fractals1_img13.gif" width="500">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also draw a Sierpinski triangle by iterating or playing a game of chaos. <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Chaos_theory">Chaos theory</a> is a branch of mathematics focusing on the study of chaos — dynamical systems whose apparently random states of disorder and irregularities are actually governed by underlying patterns and deterministic laws that are highly sensitive to initial conditions.</p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Since we are using the chaos game drawing method, we will need to repeat the same action hundreds and thousands of times. For automation, we will use a python script with the pygame module. I will not go into the details of python programming and the use of the pygame module because this article is not about python programming, but about fractals.</p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Let's continue talking about the Sierpinski triangle. To draw a Sierpinski triangle first you need to put three random points on the plane:</p>
+		<img src="img/fractals1_img14.png" width="400">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next, we need to put a random point (marked with a red arrow), it can be located anywhere on this plane, even inside the triangle formed by the three starting points, even outside this triangle:</p>
+		<img src="img/fractals1_img15.png" width="400">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The next step is that we have to randomly take one of the three main points and the point that we put in the previous step, and find the middle of the segment created by these two points, and put a new point there (marked with a red arrow):</p>
+		<img src="img/fractals1_img16.png" width="400">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To find the coordinates of the midpoint of a segment from the coordinates of two points describing this segment, I used this function:</p>
+		<div class="code_block">
+			<p>
+				<span class="code_blue_text">def</span> <span class="code_green_text">get_coords_center_line</span>(<span class="code_orange_text">x1</span>, <span class="code_orange_text">y1</span>, <span class="code_orange_text">x2</span>, <span class="code_orange_text">y2</span>):
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x3 = <span class="code_blue_text">int</span>((x1 <span class="code_red_text">+</span> x2) <span class="code_red_text">/</span> <span class="code_purple_text">2</span>)<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y3 = <span class="code_blue_text">int</span>((y1 <span class="code_red_text">+</span> y2) <span class="code_red_text">/</span> <span class="code_purple_text">2</span>)<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code_red_text">return</span> x3, y3
+			</p>
+		</div>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The next step, we must once again select a random point from the three main ones and again find the midpoint of the segment between the selected point and the last set point. This step will need to be repeated many times before we draw the Sierpinski triangle:</p>
+		<img src="img/fractals1_img17.gif" width="400">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is very interesting that despite the fact that our construction of the Sierpinski triangle is completely built on chaos, which manifests itself in a completely chaotic, random choice of one of the main points, we will still get this fractal.</p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perhaps you have a question "What if you put the starting point in the supposed empty triangle formed by the midpoints of the segments of the large triangle, then what will happen?". As mentioned earlier, we can put the first point at any place on the plane, that is, if we put the starting point in the assumed empty triangle, form the middle of the segments of the large triangle, then we will only get a pair of points that are in the voids. But the Sierpinski triangle will still work. After all, we should not look at the behavior of individual points, but at the group behavior of a large number of points:</p>
+		<img src="img/fractals1_img18.gif" width="400">
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As we can see, we have three points that are out of the general behavior, but if you look at the general behavior of the points, it is completely predictable.</p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fractals are very beautiful mathematical figures found in real life, and all this beauty can be obtained from pure chaos.</p>
+	</div>
+	<div class="block">
+		<h1>Used links:</h1>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Code from this article, GitHub: <a class="link" target="_blank" href="https://github.com/fisicpy/chaos-theory">https://github.com/fisicpy/chaos-theory</a></p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chaos theory, wikipedia: <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Chaos_theory">https://en.wikipedia.org/wiki/Chaos_theory</a></p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sierpinski triangle, wikipedia: <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Sierpiński_triangle">https://en.wikipedia.org/wiki/Sierpiński_triangle</a></p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waclaw Sierpinski, wikipedia: <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Wacław_Sierpiński">https://en.wikipedia.org/wiki/Wacław_Sierpiński</a></p>
+		<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fractal, wikipedia: <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Fractal">https://en.wikipedia.org/wiki/Fractal</a></p>
+	</div>
+</body>
+</html>
